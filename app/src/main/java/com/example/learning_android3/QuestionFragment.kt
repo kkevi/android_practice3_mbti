@@ -60,7 +60,7 @@ class QuestionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val
+//        val
 
         return super.onCreateView(inflater, container, savedInstanceState)
     }
