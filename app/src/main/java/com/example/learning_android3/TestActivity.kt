@@ -1,5 +1,6 @@
 package com.example.learning_android3
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +26,10 @@ class TestActivity : AppCompatActivity() {
     fun moveToNextQuestion(){
         if (viewPager.currentItem == 3) {
             // 마지막 페이지 -> 결과 화면으로 이동
-//            val intent
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putIntegerArrayListExtra("results", ArrayList(questionarieResults.results))
+            startActivity(intent)
+
         } else {
             val nextItem = viewPager.currentItem + 1 //페이징 처리
             if(nextItem < (viewPager.adapter?.itemCount ?: 0)){
@@ -36,7 +40,7 @@ class TestActivity : AppCompatActivity() {
 }
 
 class QuestionarieResults{
-    val results = mutableListOf<Int>()
+    val results = mutableListOf<Int>() // 1, 2, 2, 1 (E, N, T, P)
 
     fun addResponses(response: List<Int>){
         // groupingBy로 List<Int>안의 같은 값끼리 묶어준다.
