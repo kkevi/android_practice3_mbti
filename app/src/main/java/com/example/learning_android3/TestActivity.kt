@@ -11,6 +11,8 @@ class TestActivity : AppCompatActivity() {
 
     private lateinit var viewPager: ViewPager2
 
+    val questionarieResults = QuestionarieResults()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,7 +35,7 @@ class TestActivity : AppCompatActivity() {
     }
 }
 
-class QuestionarieResult{
+class QuestionarieResults{
     val results = mutableListOf<Int>()
 
     fun addResponses(response: List<Int>){
