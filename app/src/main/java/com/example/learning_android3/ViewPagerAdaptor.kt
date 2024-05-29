@@ -12,9 +12,10 @@ class ViewPagerAdaptor(fragmentActivity: FragmentActivity) : FragmentStateAdapte
         return 4
     }
 
+    // 새로운 페이지를 호출할 때 아래 함수 실행 -> 실행될 때 Position 같이 들어옴
     override fun createFragment(position: Int): Fragment {
         TODO("Not yet implemented")
 
-//        return QuestionFragment.newInstance(position)
+        return QuestionFragment.newInstance(position) // 새로운 fragment를 만들면서 새인스턴스 생성하고 Positoin (페이지 넘버)를 파라미터로 넘겨줌
     }
 }
